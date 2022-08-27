@@ -14,7 +14,7 @@
 	<name>H2-Database</name>
 	<description>demo3</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
