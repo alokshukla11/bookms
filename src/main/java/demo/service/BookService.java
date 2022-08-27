@@ -36,7 +36,7 @@ public class BookService {
         	if(bookId==0)
         		return APIResponseUtil.badResponse(null);
         	Optional<Book> book =  bookRepository.findById(bookId);
-        	if(book!=null && !book.isEmpty()) {
+        	if(book!=null && !book.isPresent()) {
         		Book book_ = book.get();
         		return APIResponseUtil.successResponse(book_);
         	}
@@ -52,7 +52,7 @@ public class BookService {
         	if(isbn==null || isbn.isEmpty())
         		return APIResponseUtil.badResponse(null);
         	Optional<Book> book =  bookRepository.findByIsbn(isbn);
-        	if(book!=null && !book.isEmpty()) {
+        	if(book!=null && !book.isPresent()) {
         		Book book_ = book.get();
         		return APIResponseUtil.successResponse(book_);
         	}
