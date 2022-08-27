@@ -24,7 +24,7 @@ public class BookService {
 	public APIResponse getAllBooks() {
 		try {
 			List<Book> books = new ArrayList<Book>();
-			LOGGER.debug("books:{}",books);
+			LOGGER.debug("books:  {}",books);
 			bookRepository.findAll().forEach(book -> books.add(book));
         	if(books!=null && books.size()>0)
         		return APIResponseUtil.successResponse(books);
