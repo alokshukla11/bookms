@@ -17,6 +17,11 @@ import lombok.Data;
 @Data
 public class Book
 {
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
 	@Id
 	@Column
 	@GeneratedValue

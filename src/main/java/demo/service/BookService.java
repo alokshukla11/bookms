@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,12 @@ public class BookService {
 	@Autowired
 	BookRepository bookRepository;
 
+    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(BookService.class);
+
 	public APIResponse getAllBooks() {
 		try {
 			List<Book> books = new ArrayList<Book>();
+			LOGGER.debug("books:{}",books);
 			bookRepository.findAll().forEach(book -> books.add(book));
         	if(books!=null && books.size()>0)
         		return APIResponseUtil.successResponse(books);
